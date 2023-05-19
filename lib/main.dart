@@ -2,5 +2,8 @@ import 'package:flutter/material.dart';
 import 'app.dart';
 
 void main() {
-  runApp(const App());
+  runApp(MaterialApp(
+    home: const App(),
+    theme: ThemeData.light(useMaterial3: true),
+  ));
 }
