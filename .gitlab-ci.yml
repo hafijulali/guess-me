@@ -8,7 +8,7 @@ before_script:
     - flutter pub get
     - flutter pub upgrade
 
-web:
+pages:
     stage: deploy
     script:
         - flutter build web --release --base-href /guess-me/
