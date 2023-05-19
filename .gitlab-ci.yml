@@ -1,0 +1,22 @@
+image: cirrusci/flutter:latest
+stages:
+    - build
+    - deploy
+
+before_script:
+    - flutter clean
+    - flutter pub get
+    - flutter pub upgrade
+
+web:
+    stage: deploy
+    script:
+        - flutter build web --release --base-href /guess-me/
+        - cp -r build/web public
+    artifacts:
+        untracked: false
+        when: on_success
+        paths:
+            - public
+    only:
+        - master
