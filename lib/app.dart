@@ -16,5 +16,4 @@ class App extends StatelessWidget {
       home: const HomePage(title: appTitle),
     );
   }
-  
 }

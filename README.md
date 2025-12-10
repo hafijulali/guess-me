@@ -1,5 +1,9 @@
 # Guess Me
 
+[![CI pipeline for flutter](https://github.com/hafijulali/guess-me/actions/workflows/ci.yaml/badge.svg)](https://github.com/hafijulali/guess-me/actions/workflows/ci.yaml)
+[![pages-build](https://gitlab.com/hafijulali/guess-me/badges/master/pipeline.svg)](https://gitlab.com/hafijulali/guess-me/-/pipelines)
+[![pages-deploy](https://gitlab.com/hafijulali/guess-me/badges/master/deployment.svg)](https://gitlab.com/hafijulali/guess-me/-/deployments)
+
 **A simple number guessing game based on binary search approach.**
 
 ## About
@@ -16,27 +20,11 @@ GuessMe is a simple number guessing game that asks if the number is higher or lo
 
 ## Getting Started
 
-The application can be downloaded and tested for various platforms using the links given below
+You can download the latest release for all supported platforms from the [GitHub Releases](https://github.com/hafijulali/guess-me/releases) page.
 
-### Windows
-Download the Windows application from this link
-
-### Android
-Download the Android application from this link
-
-### iOS
-Download the iOS application from this link
-
-### MacOS
-Download the MacOS application from this link
-
-### Linux
-Download the Linux application from this link
-
-### Web App
-Web App of OpenTodo is accessible at
-<br/> &emsp; - https://hafijul.gitlab.io/guess-me/#/ [latest version built directly from master brach]
-<br/> &emsp; - https://guessme.hafijul.repl.co
+## Web App
+The web version of Guess Me is accessible at:
+<br/> &emsp; - https://hafijulali.gitlab.io/guess-me
 
 ## Building from source
 ### Android

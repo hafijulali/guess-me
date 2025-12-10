@@ -1,22 +1,35 @@
-image: cirrusci/flutter:latest
+workflow:
+  rules:
+    - if: $CI_COMMIT_TAG
+
+image: ghcr.io/cirruslabs/flutter:latest
+
+variables:
+  FLUTTER_CHANNEL: "stable"
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .pub-cache/
+    - build/
+
 stages:
-    - build
-    - deploy
+  - build
+  - deploy
 
 before_script:
-    - flutter clean
-    - flutter pub get
-    - flutter pub upgrade
+  - flutter clean
+  - flutter pub get
+  - flutter pub upgrade
+  - echo "$ENV" > .env
 
 pages:
-    stage: deploy
-    script:
-        - flutter build web --release --base-href /guess-me/
-        - cp -r build/web public
-    artifacts:
-        untracked: false
-        when: on_success
-        paths:
-            - public
-    only:
-        - master
+  stage: build
+  script:
+    - flutter build web --wasm -O4 --release --base-href /${CI_PROJECT_NAME}/
+    - cp -r build/web public
+  artifacts:
+    untracked: false
+    when: on_success
+    paths:
+      - public

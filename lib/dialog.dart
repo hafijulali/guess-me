@@ -2,23 +2,27 @@ import 'package:flutter/material.dart';
 import 'utils.dart';
 
 Future<String?> showAlertDialog(
-    BuildContext context, String title, String message) async {
+  BuildContext context,
+  String title,
+  String message,
+) async {
   return showDialog<String>(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Center(child: Text(title)),
-          content: Text(message),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () => safePopWithResult(context, 'CANCEL'),
-              child: const Text('CANCEL'),
-            ),
-            TextButton(
-              onPressed: () => safePopWithResult(context, 'OK'),
-              child: const Text('OK'),
-            ),
-          ],
-        );
-      });
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Center(child: Text(title)),
+        content: Text(message),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => safePopWithResult(context, 'CANCEL'),
+            child: const Text('CANCEL'),
+          ),
+          TextButton(
+            onPressed: () => safePopWithResult(context, 'OK'),
+            child: const Text('OK'),
+          ),
+        ],
+      );
+    },
+  );
 }

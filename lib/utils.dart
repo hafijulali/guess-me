@@ -9,6 +9,6 @@ Future<String?> safePopWithResult(BuildContext context, String result) async {
   return null;
 }
 
-Future<String?> validateTextFields(int firstNumber, int secondNumber)async {
+Future<String?> validateTextFields(int firstNumber, int secondNumber) async {
   return null;
 }
